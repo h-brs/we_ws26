@@ -25,6 +25,9 @@ export const component = {
     css: ["ccm.load", "./resources/styles.css"],
     pdf: "./resources/slides.pdf",
     viewer: {
+      // Legacy builds supply missing browser APIs in both the viewer and its worker.
+      pdfjs: ["ccm.load", "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.3.289/legacy/build/pdf.min.mjs"],
+      worker: "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.3.289/legacy/build/pdf.worker.min.mjs",
       navigation: false, links: true, download: true,
       labels: {
         viewer: "PDF-Betrachter", previous: "Zurück", next: "Weiter", page: "Seite", of: "von",
